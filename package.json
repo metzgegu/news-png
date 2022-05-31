@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node index.js",
-    "upload": "node scripts/github.js"
+    "build": "node index.js"
   },
   "author": "",
   "license": "ISC",
