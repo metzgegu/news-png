@@ -16,7 +16,7 @@ const getMaxNextLine = (input, maxChars) => {
     return { line, remainingChars };
 };
 
-const maxChars = 70
+const maxChars = 65
 
 exports.formatTitle = (title) => {
     let output = [];
