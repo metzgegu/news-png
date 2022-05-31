@@ -1,0 +1,29 @@
+const getMaxNextLine = (input, maxChars = 105) => {
+    // Split the string into an array of words.
+    const allWords = input.split(" ");
+    // Find the index in the words array at which we should stop or we will exceed
+    // maximum characters.
+    const lineIndex = allWords.reduce((prev, cur, index) => {
+      if (prev?.done) return prev;
+      const endLastWord = prev?.position || 0;
+      const position = endLastWord + 1 + cur.length;
+      return position >= maxChars ? { done: true, index } : { position, index };
+    });
+    const line = allWords.slice(0, lineIndex.index).join(" ");
+    // And determine what's left.
+    const remainingChars = allWords.slice(lineIndex.index).join(" ");
+    // Return the result.
+    return { line, remainingChars };
+};
+
+exports.formatTitle = (title) => {
+    let output = [];
+    if (title.length >= 105) {
+        const firstLine = getMaxNextLine(title);
+        output = [firstLine.line, firstLine.remainingChars];
+    } else {
+        output = [title];
+    }
+
+    return output;
+};
