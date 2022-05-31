@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node index.js"
+    "build": "node index.js",
+    "upload": "node scripts/github.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@lennym/commit": "^1.0.1",
     "canvas": "^2.9.1",
     "rss-parser": "^3.12.0"
   }

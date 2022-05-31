@@ -40,5 +40,5 @@ exports.draw = (items) => {
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir);
     }
-    fs.writeFileSync("./dist/image.png", buffer);
+    fs.writeFileSync("./dist/news.png", buffer);
 }
