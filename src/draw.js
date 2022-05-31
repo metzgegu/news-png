@@ -3,9 +3,10 @@ const fs = require("fs");
 
 const { formatTitle } = require("./util");
 
-const width = 1000;
-const height = 700;
-const lineHeight = 40;
+const width = 700;
+const height = 500;
+const lineHeight = 30;
+
 
 exports.draw = (items) => {
     const canvas = createCanvas(width, height);
@@ -14,7 +15,7 @@ exports.draw = (items) => {
     context.fillStyle = "#fff";
     context.fillRect(0, 0, width, height);
     
-    context.font = "bold 15pt 'PT Sans'";
+    context.font = "bold 13pt 'PT Sans'";
     context.textAlign = "left";
     context.fillStyle = "#000";
 
@@ -28,10 +29,10 @@ exports.draw = (items) => {
         context.fillText('- ', 10, innerItemPosX)
         titles.forEach(title => {
             context.fillText(title, 30, innerItemPosX)
-            innerItemPosX = innerItemPosX + 25
+            innerItemPosX = innerItemPosX + 15
         })
         
-        currentLineX = innerItemPosX + lineHeight - 25
+        currentLineX = innerItemPosX + lineHeight - 15
     })
 
     const buffer = canvas.toBuffer("image/png");

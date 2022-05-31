@@ -1,4 +1,4 @@
-const getMaxNextLine = (input, maxChars = 105) => {
+const getMaxNextLine = (input, maxChars) => {
     // Split the string into an array of words.
     const allWords = input.split(" ");
     // Find the index in the words array at which we should stop or we will exceed
@@ -16,10 +16,12 @@ const getMaxNextLine = (input, maxChars = 105) => {
     return { line, remainingChars };
 };
 
+const maxChars = 70
+
 exports.formatTitle = (title) => {
     let output = [];
-    if (title.length >= 105) {
-        const firstLine = getMaxNextLine(title);
+    if (title.length >= maxChars) {
+        const firstLine = getMaxNextLine(title, maxChars);
         output = [firstLine.line, firstLine.remainingChars];
     } else {
         output = [title];
