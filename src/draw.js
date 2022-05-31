@@ -3,7 +3,7 @@ const fs = require("fs");
 
 const { formatTitle } = require("./util");
 
-const width = 700;
+const width = 800;
 const height = 500;
 const lineHeight = 30;
 
