@@ -5,5 +5,5 @@ const { pushToGithub } = require("./src/github");
 (async () => {
   const news = await getNews();
   draw(news.items.map((item) => item.title));
-  // pushToGithub()
+  pushToGithub()
 })();
