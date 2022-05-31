@@ -16,13 +16,23 @@ const getMaxNextLine = (input, maxChars) => {
     return { line, remainingChars };
 };
 
-const maxChars = 60
+const maxChars = 65
 
 exports.formatTitle = (title) => {
     let output = [];
     if (title.length >= maxChars) {
         const firstLine = getMaxNextLine(title, maxChars);
-        output = [firstLine.line, firstLine.remainingChars];
+        let remainingChars = firstLine.remainingChars
+        output = [firstLine.line]
+        while(remainingChars && remainingChars.length > 0) {
+            if (remainingChars.length >= maxChars) {
+                const nextLine = getMaxNextLine(remainingChars, maxChars);
+                output = [...output, nextLine.line]
+                remainingChars = nextLine.remainingChars
+            } else {
+                remainingChars = ''
+            }
+        }
     } else {
         output = [title];
     }
