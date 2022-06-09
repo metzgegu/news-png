@@ -3,6 +3,6 @@ const parser = new Parser();
 
 exports.getNews = async () => {
   return await parser.parseURL(
-    "https://www.lemonde.fr/rss/plus-lus.xml"
+    "https://www.nouvelobs.com/debat/rss.xml"
   );
 };
