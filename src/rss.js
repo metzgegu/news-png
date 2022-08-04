@@ -3,6 +3,6 @@ const parser = new Parser();
 
 exports.getNews = async () => {
   return await parser.parseURL(
-    "https://hnrss.org/frontpage"
+    "https://www.lemonde.fr/rss/une.xml"
   );
 };
